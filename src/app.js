@@ -5,7 +5,7 @@ const request=require('request')
 const forecast=require('../util/forecast')
 const geocode=require('../util/geocode')
 const app=express()//store the express application
-
+//
 console.log(__dirname)//D:\NODE_js_RZA\web-server\src
 console.log(path.join(__dirname,'../public'))//D:\NODE_js_RZA\web-server\src\app.js
 
