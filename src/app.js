@@ -73,7 +73,7 @@ app.get('/weather',(req,res)=>{//access via "localhost:3000/weather"
     console.log(req.query.address)
     const address=req.query.address
 
-    geocode(address, (error, {latitude,longtitude,location}={})=>{//default params ={}
+    geocode(address, (error, {latitude,longitude,location}={})=>{//default params ={}
 
         if(error){
             console.log(error)
@@ -83,7 +83,7 @@ app.get('/weather',(req,res)=>{//access via "localhost:3000/weather"
         //console.log('Error',error)
         //console.log('Data',data)
     
-        forecast(latitude, longtitude, (error, forecastData) => {
+        forecast(latitude, longitude, (error, forecastData) => {
             if(error) {
                 console.log(error)
                 return res.send({error})

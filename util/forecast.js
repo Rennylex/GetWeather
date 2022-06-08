@@ -14,9 +14,9 @@
 
 const request=require('request')
 
-const forecast=(latitude, longtitude,callback)=>{
-
-    const url='http://api.weatherstack.com/current?access_key=b208b62967a75f79421bc25b6a3bef69&query='+latitude+','+longtitude+'&units=f'
+const forecast=(latitude,longitude,callback)=>{
+    console.log(latitude+','+longitude)
+    const url='http://api.weatherstack.com/current?access_key=b208b62967a75f79421bc25b6a3bef69&query='+latitude+','+longitude+'&units=f'
     request({url:url,json:true},(error,{body})=>{//用{body}替换response，因为后面只用到了response.body
         if(error){
             callback('Unable to connect in ',undefined)

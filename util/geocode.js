@@ -14,15 +14,16 @@ const geocode=(address, callback)=>{
             callback('Unable to find this location! :(',undefined)
         }
         else{//可以访问，则返回指定网页数据
+            console.log(body.data[0].latitude+''+body.data[0].longitude)
             callback(undefined, {//返回一个object
                 // latitude:body.features[0].center[1],
                 // longtitude:body.features[0].center[0],
                 // location: body.features[0].place_name
 
                 latitude:body.data[0].latitude,
-                longtitude:body.data[0].longtitude,
+                longitude:body.data[0].longitude,
                 location: body.data[0].label
-
+                
             })
 
         }
