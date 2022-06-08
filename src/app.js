@@ -5,6 +5,7 @@ const request=require('request')
 const forecast=require('../util/forecast')
 const geocode=require('../util/geocode')
 const app=express()//store the express application
+const port = process.env.PORT || 3000 //heroku serverport or 3000
 //
 console.log(__dirname)//D:\NODE_js_RZA\web-server\src
 console.log(path.join(__dirname,'../public'))//D:\NODE_js_RZA\web-server\src\app.js
@@ -146,7 +147,9 @@ app.get('*',(req,res) =>{
 
 
 ////starting server is async
-app.listen(3000,()=>{//access via "localhost:3000"
-    console.log('server is up on port 3000')
+
+
+app.listen(port,()=>{//access via "localhost:3000"
+    console.log('server is up on port'+port)
 
 })//(port,),3000是local port

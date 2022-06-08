@@ -31,7 +31,7 @@ weatherForm.addEventListener('submit',(e)=>{//this callback run everytime an eve
     message1.textContent = 'Loading message...'
     message2.textContent = ''
     //console.log(location)
-    fetch('http://localhost:3000/weather?address='+encodeURIComponent(location)).then((response) => {//fetch is async
+    fetch('/weather?address='+encodeURIComponent(location)).then((response) => {//fetch is async
     response.json().then((data)=>{//this callback function will be runned when the Json data is arrived and parsed
         if(data.error){
             message1.textContent =data.error
